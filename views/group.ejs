@@ -1,0 +1,72 @@
+
+<%- include ('..\\views\\partials\\header')%>
+<div>
+  <div class='container' style="padding-top: 70px;">
+<form method="post" class=" form-control-lg">
+  <div style='width: 50%;position: relative;margin-left: auto;margin-right: auto;'>
+        <select  class="form-control form-control-lg" name="searchby" id="grouplist" onchange="ChangeGroupList()"> 
+            <option selected="selected">--Select---</option>
+            <option value="course">Course</option>
+        <option value="branch">Branch</option>
+        <option value="nationality">Nationality</option>
+       <option value="semester">Semester</option>
+        <option value="gender">Gender</option>
+          </select>
+        </div>
+        <div style='width: 55%;position: relative;margin-left: auto;margin-right: auto;margin-top: 25px;'>
+        <select id="groupvalue" class="form-control form-control-lg" name="searchval"></select>
+      </div>
+      <div style='width: 40%;position:relative;margin-left:720px;margin-top: 15px;'>
+        <button class="btn btn-lg btn-outline-success my-2 my-sm-0 " type="submit"> <span class="material-icons">
+            search
+            </span>Search</button>
+          </div>
+           </form>
+</div>
+</div>
+  
+
+
+
+  <script>
+    
+    var glist = {};
+                glist['branch'] = ['CSE', 'ISE', 'ECE','CHE','MEC','EEE','TEC'];
+                glist['course'] = ['BE', 'DE', 'ITI', 'BCO'];
+                glist['nationality'] = ['INDIAN', 'AMERICAN', 'NIGERIAN'];
+                glist['semester'] = ['1', '2', '3','4','5','6','7','8'];
+                glist['gender'] = ['M', 'F', 'O'];
+        
+                
+                function ChangeGroupList() {
+                  var group = document.getElementById("grouplist");
+                  var groupval = document.getElementById("groupvalue");
+                  var data = group.options[group.selectedIndex].value;
+                  
+                  while (groupval.options.length) {
+                    groupval.remove(0);
+                  }
+                  var gdata = glist[data];
+                  if (gdata) {
+                    var i;
+                    for (i = 0; i < gdata.length; i++) {
+                      var grouplist = new Option(gdata[i], gdata[i]);
+                      groupvalue.options.add(grouplist);
+                    }
+                  }
+                  var passval=document.getElementById("groupvalue").value;
+                } 
+            
+  </script>
+
+
+
+           
+           
+           
+           
+           
+           
+<%- include ('..\\views\\partials\\footer')%>
+
+

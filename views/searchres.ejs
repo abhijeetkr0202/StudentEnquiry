@@ -1,0 +1,55 @@
+<%- include ('..\\views\\partials\\header')%>
+
+
+<div style="overflow-x:auto;">
+    <table style="white-space: nowrap;" border="1px" class="table table-hover">
+        <tr style="color: brown; background-color:#7498ad;">
+        <th>USN</th> 
+        <th>NAME</th>
+        <th>BRANCH</th>
+        <th>COURSE</th>
+        <th>GENDER</th>
+        <th>SEMESTER</th>
+        <th>PASSING_YEAR</th>
+        <th>GPA</th>
+        <th>12th Percentage</th>
+        <th>EMAIL</th>
+        <th>DOB</th>
+        <th>BLOOD</th>
+        <th>NATIONALITY</th>
+        <th>FATHER'S NAME</th>
+        <th>MOTHER'S NAME</th>
+        <th>STUDENT CONTACT</th>
+        <th>PARENT'S CONTACT</th>
+        <th>ADDRESS</th>
+        <th>PARENT'S INCOME</th>
+
+    </tr>
+    <% (result2.rows).forEach(function(x){%>
+        <tr>
+       <td><%=x[0]%></td>
+       <td><%=x[1]%></td>
+       <td><%=x[2]%></td>
+       <td><%=x[3]%></td>
+       <td><%=x[4]%></td>
+       <td><%=x[5]%></td>
+       <td><%=x[6]%></td>
+       <td><%=x[7]%></td>
+       <td><%=x[8]%></td>
+       <td><%=x[9]%></td>
+       <td><%=x[10].toDateString()%></td>
+       <td><%=x[11]%></td>
+       <td><%=x[12]%></td>
+       <td><%=x[13]%></td>
+       <td><%=x[14]%></td>
+       <td><%=x[15]%></td>
+       <td><%=x[16]%></td>
+       <td><%=x[17]%></td>
+       <td><%=x[18]%></td>
+       
+        </tr>
+        <%}) %>
+    
+</table>
+
+<%- include ('..\\views\\partials\\footer')%>

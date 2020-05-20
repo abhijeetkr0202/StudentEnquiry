@@ -1,0 +1,112 @@
+<%- include ('..\\views\\partials\\header')%>
+
+  <div  style="margin-top: 20px;" class="container">
+    <% if(success && success.length > 0) { %>
+<div class="alert alert-success" role="alert">
+    <%=success%></div>
+<% } %>
+    </div>
+
+  <div class="ui placeholder segment" id="buttonset">
+    <div class="ui two column stackable center aligned grid">
+      <div class="ui vertical divider"></div>
+      <div class="middle aligned row">
+        <div class="column">
+          <div class="ui icon header abhijeet">
+            <a href="/getall" role="button" class="btn btn-sq-lg btn-primary ">
+                <br><span class="material-icons mat">account_box</span><br/>
+                <br> <br>Show Database
+              </a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui icon header abhijeet">
+            <a href="/search/specific" role="button" class="btn btn-sq-lg btn-success ">
+                <br><span class="material-icons mat">search</span><br/>
+                <br> Search by<br><span class="iconstyle">Name/USN/ContactNo</span>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui placeholder segment" id="buttonset">
+    <div class="ui two column stackable center aligned grid">
+      <div class="ui vertical divider"></div>
+      <div class="middle aligned row">
+        <div class="column">
+          <div class="ui icon header abhijeet">
+            <a href="/edit" role="button" class="btn btn-sq-lg btn-info ">
+               <br> <span class="material-icons mat">edit</span><br/>
+                <br><span class="iconstyle">Edit</span> </a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui icon header abhijeet">
+            <a href="/addnewdata" role="button" class="btn btn-sq-lg btn-warning ">
+                <br><span class="material-icons mat">
+                    person_add
+                    </span>
+                <br><br><span class="iconstyle">Add Student Data</span>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui placeholder segment" id="buttonset">
+    <div class="ui two column stackable center aligned grid">
+      <div class="ui vertical divider"></div>
+      <div class="middle aligned row">
+        <div class="column">
+          <div class="ui icon header abhijeet">
+            <a href="/search/group" role="button" class="btn btn-sq-lg btn-danger">
+               <br> <span class="material-icons mat">
+                    filter_1
+                    </span>
+                <br><br><span class="iconstyle">Filter Students <br>(1 Condition)</span>
+              </a>
+              
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui icon header abhijeet">
+            <a href="/search/groupv2" role="button" class="btn btn-sq-lg btn-danger ">
+               <br> <span class="material-icons mat">
+                    filter_2
+                    </span>
+                <br><br><span class="iconstyle">Filter Students <br>
+                (2 Condition)</span>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+      .btn-sq-lg {
+  width: 200px !important;
+  height: 150px !important;
+}
+.buttons
+{
+    padding:25px;
+}
+a{
+    padding:100px;
+}
+#buttonset
+{
+    width:40%;
+  
+    margin-left:auto;
+    margin-right: auto;
+}
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.mat { transform: scale(3);  }
+.abhijeet
+{
+    margin:auto;
+}
+  </style>
+<%- include ('..\\views\\partials\\footer')%>

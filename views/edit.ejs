@@ -1,0 +1,39 @@
+<%- include ('..\\views\\partials\\header')%>
+<div style="float:right; margin-top: 15px; margin-bottom: 15px;">
+<form method="post">
+    <button type="submit" class="btn-lg btn-danger" name="deletedatabase" value="confirm" onclick="return confirm('Are you sure to delete the whole data?')"><span style="margin:auto;"><i style="color: 
+     rgb(0, 0, 0);position: relative; padding-right: 5px;margin: auto;" class="material-icons icn">delete_forever</i></span>Clear Database   </button>
+     </form>
+    </div>
+<table style="margin-top:15px;" border="1px" class="table table-hover">
+    <tr style="color: brown; background-color:#7498ad;">
+        <th>USN</th> 
+        <th>NAME</th>
+        <th>BRANCH</th>
+        <th style="font-size: smaller; color: bisque;">Click to edit</th>
+        <th style="font-size: smaller; color: bisque;">Click to delete</th>
+    </tr>
+    
+    <% (result.rows).forEach(function(x){%>
+   <tr>
+       <td><%=x[0]%></td>
+       <td><%=x[1]%></td>
+       <td><%=x[2]%></td>
+      
+        <td><form method="post">
+           <button type="submit" class="btn" name=editvalues value="<%=x[0]%>"><span><i style="color: 
+             rgb(11, 77, 139)" class="material-icons icn">edit</i></span></button>
+             </form>
+    </td>
+    <td><form method="post">
+        <button type="submit" class="btn" name=usn value="<%=x[0]%>"><span><i style="color: 
+         rgb(230, 57, 48)" class="material-icons icn">delete_forever</i></span></button>
+         </form>
+         </td>
+   </tr>
+   
+     
+                 
+    <%}) %>
+</table>
+<%- include ('..\\views\\partials\\footer')%>

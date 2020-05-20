@@ -1,0 +1,114 @@
+<%- include ('..\\views\\partials\\header')%>
+<div class='container' style="padding-top: 70px;">
+<form method="post" class=" form-control-lg">
+  <div style='width: 50%;position: relative;margin-left: auto;margin-right: auto;'>
+    <h3>Select First Condition</h3>
+    <select  class="form-control form -control-lg" name="searchby1" id="grouplist1" onchange="ChangeGroupList1()"> 
+        <option selected="selected">--Select---</option>
+        <option value="course">Course</option>
+    <option value="branch">Branch</option>
+    <option value="nationality">Nationality</option>
+   <option value="semester">Semester</option>
+    <option value="gender">Gender</option>
+      </select>
+    </div>
+    <div  style='width: 55%;position: relative;margin-left: auto;margin-right: auto;margin-top:10px;'>
+    <select id="grouplvalue1" class="form-control form-control-lg" name="searchval1"></select>
+  </div>
+    <br>
+
+
+
+
+
+
+
+
+    <div style='width: 50%;position: relative;margin-left: auto;margin-right: auto;'>
+      <h3>Select Second Condition</h3> 
+      <select  class="form-control form-control-lg" name="searchby2" id="grouplist2" onchange="ChangeGroupList2()"> 
+            <option selected="selected">--Select---</option>
+            <option value="course">Course</option>
+        <option value="branch">Branch</option>
+        <option value="nationality">Nationality</option>
+       <option value="semester">Semester</option>
+        <option value="gender">Gender</option>
+          </select>
+    </div>
+    <div style='width: 55%;position: relative;margin-left: auto;margin-right: auto;margin-top:10px;'>
+        <select id="grouplvalue2" class="form-control" name="searchval2"></select>
+      </div>
+      <div style='width: 40%;position:relative;margin-left:720px;margin-top: 15px;'>
+        <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit"> <span class="material-icons">
+            search
+            </span>Search</button>
+          </div>
+
+
+
+
+       </form>
+
+      </div>
+
+
+
+
+
+<script>
+
+var glist1 = {};
+            glist1['branch'] = ['CSE', 'ISE', 'ECE','CHE','MEC','EEE','TEC'];
+            glist1['course'] = ['BE', 'DE', 'ITI', 'BCO'];
+            glist1['nationality'] = ['INDIAN', 'AMERICAN', 'NIGERIAN'];
+            glist1['semester'] = ['1', '2', '3','4','5','6','7','8'];
+            glist1['gender'] = ['M', 'F', 'O'];
+    
+            
+            function ChangeGroupList1() {
+              var group1 = document.getElementById("grouplist1");
+              var groupval1 = document.getElementById("grouplvalue1");
+              var data1 = group1.options[group1.selectedIndex].value;
+              
+              while (groupval1.options.length) {
+                groupval1.remove(0);
+              }
+              var gdata1= glist1[data1];
+              if (gdata1) {
+                var i;
+                for (i = 0; i < gdata1.length; i++) {
+                  var grouplist1 = new Option(gdata1[i], gdata1[i]);
+                  grouplvalue1.options.add(grouplist1);
+                }
+              }
+    
+            } 
+
+            var glist2 = {};
+            glist2['branch'] = ['CSE', 'ISE', 'ECE','CHE','MEC','EEE','TEC'];
+            glist2['course'] = ['BE', 'DE', 'ITI', 'BCO'];
+            glist2['nationality'] = ['INDIAN', 'AMERICAN', 'NIGERIAN'];
+            glist2['semester'] = ['1', '2', '3','4','5','6','7','8'];
+            glist2['gender'] = ['M', 'F', 'O'];
+    
+            
+            function ChangeGroupList2() {
+              var group2 = document.getElementById("grouplist2");
+              var groupval2 = document.getElementById("grouplvalue2");
+              var data2 = group2.options[group2.selectedIndex].value;
+              
+              while (groupval2.options.length) {
+                groupval2.remove(0);
+              }
+              var gdata2 = glist2[data2];
+              if (gdata2) {
+                var i;
+                for (i = 0; i < gdata2.length; i++) {
+                  var grouplist2 = new Option(gdata2[i], gdata2[i]);
+                  grouplvalue2.options.add(grouplist2);
+                }
+              }
+            } 
+        
+</script>
+<%- include ('..\\views\\partials\\footer')%>

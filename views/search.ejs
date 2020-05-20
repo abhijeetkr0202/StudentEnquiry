@@ -1,0 +1,23 @@
+<%- include ('..\\views\\partials\\header')%>
+<div >
+<div class='container' style="padding-top: 70px;">
+<form method="post" class=" form-control-lg">
+   <div style='width: 50%;position: relative;margin-left: auto;margin-right: auto;'>
+    <select class="form-control form-control-lg" name="searchby" >
+        <option selected="selected">--select--</option>
+        <option value="searchusn">USN</option>
+        <option value="searchname">Name</option>
+        <option value="searchcontact">Student's Contact</option>
+   </select>
+</div>
+<div style="margin:25px;">
+    <input style='width: 55%;position: relative;margin-left: auto;margin-right: auto;' class="form-control form-control-lg" type="text" placeholder="Search" aria-label="Search" name="searchvalue" onkeyup="this.value = this.value.toUpperCase();">
+</div >
+<div style='width: 40%;position:relative;margin-left:720px;'><button class="btn btn-lg btn-outline-success my-2 my-sm-0 " type="submit"><span  class="material-icons">
+        search
+        </span>Search</button>
+    </div>
+    </form>
+</div>
+</div>
+<%- include ('..\\views\\partials\\footer')%>

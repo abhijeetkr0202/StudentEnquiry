@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentEnquiry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Mukta">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="..\..\views\libs\script.js"></script>
+</head>
+<body id="xyz">
+  <nav class="navbar navbar-dark bg-dark align-items-end">
+
+        <span style="display: inline-block;" ><img style="height:60px;width:60px;float:left;" src="SD_Logo_WhiteBG.png">
+          <a style="padding-top:20px;padding-left:25px;" class="navbar-brand" href="/home">Student Database</a>
+          <a style="color:white;transform: scale(3); margin-left:100px;" href="/home">
+            <span class="material-icons">
+              home
+              </span>
+          </a></span>
+         
+
+</nav>     
+
+  
+<div  style="margin-top: 20px;" class="container">
+    <% if(messages.error) { %>
+<div class="alert alert-danger" role="alert">
+    <%= messages.error %></div>
+<% } %>
+
+<% if(success && success.length>0){ %>
+<div class="alert alert-danger" role="alert">
+
+     <%=success%></div>
+<% } %>
+
+</div>
+<form action="/login" method="post">
+
+<div class="login-reg-panel">
+    <div class="white-panel">
+        <div class="login-show show-log-panel">
+            <h2>LOGIN </h2>
+            <input type="text" placeholder="Username" required name="username" id="username">
+            <input type="password" placeholder="Password" required name="password" id="password">
+            <button type="submit" value="Login" class="btn btn-secondary btn-lg">Login</button>
+            
+        <div class="login-info-box">
+        <h1>LOGIN TO STUDENT DATABASE</h1>
+    </div>
+        </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<style>
+       
+body{
+  font-family: 'Mukta', sans-serif;
+	height:100vh;
+	min-height:550px;
+	position:relative;
+    overflow-y: hidden;
+}
+.login-reg-panel{
+    position: relative;
+    top: 50%;
+	text-align:center;
+    width:70%;
+	right:0;left:0;
+    margin-top:180px;
+    height:400px;
+    background-color: rgba(236, 48, 20, 0.9);
+}
+.white-panel{
+    background-color: rgba(255,255, 255, 1);
+    height:500px;
+    position:absolute;
+    top:-50px;
+    width:50%;
+    right:calc(50% - 50px);
+    transition:.3s ease-in-out;
+    z-index:0;
+    box-shadow: 0 0 15px 9px #00000096;
+}
+.login-reg-panel{
+    color:#B8B8B8;
+}
+.login-reg-panel #label-login{
+    border:1px solid #9E9E9E;
+    padding:5px 5px;
+    width:150px;
+    display:block;
+    text-align:center;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight: 600;
+    font-size: 18px;
+}
+.login-info-box{
+    width:100%;
+    padding:0 50px;
+    top:35%;
+    left:95%;
+    right:0px;
+    position:absolute;
+    text-align:CENTER;
+    
+}
+
+
+.login-show{
+    z-index: 1;
+    display:none;
+    opacity:0;
+    color:#242424;
+    text-align:left;
+    padding:50px;
+}
+.show-log-panel{
+    display:block;
+    opacity:0.9;
+}
+.login-show input[type="text"], .login-show input[type="password"]{
+    width: 100%;
+    display: block;
+    margin:20px 0;
+    padding: 15px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+}
+.login-show input[type="button"] {
+    max-width: 150px;
+    width: 100%;
+    background: #444444;
+    color: #f9f9f9;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    float:right;
+    cursor:pointer;
+}
+.login-show a{
+    display:inline-block;
+    padding:10px 0;
+}
+
+
+</style>
+
+
+<%- include ('..\\views\\partials\\footer')%>
